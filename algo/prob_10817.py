@@ -1,8 +1,15 @@
-num = raw_input()
-list = num.split(" ")
-for i in range(0,len(list)):
-	for j in range(i, len(list)):
-			if int(list[i]) < int(list[j]):
-				list[i], list[j] = list[j], list[i]
+ a, b, c = map(int, raw_input().split())
+#10 20 30
+#
+if a > b:
+	if a > c:
+		if b > c:
+			print b
+		else:
+			print c
+	else:
+		print c
+elif b > c:
 
-print list[1]
+else:
+	print a
