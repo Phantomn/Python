@@ -10,7 +10,7 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 
-class ExampleSpider(scrapy.Spider):
+class ZerodaySpider(scrapy.Spider):
     name = "zeroday"
     allowed_domains = ["mvfjfugdwgc5uwho.onion"]
     start_urls = ['http://mvfjfugdwgc5uwho.onion/rss']
