@@ -1,10 +1,10 @@
 def fibonacci(n):
-    if(n==1 or n==2):
-        return 1
-    elif(n>2):
-        return fibonacci(n-1)+fibonacci(n-2)
+    if(n<=1):
+	if(n==1):
+		print "f(1) = %d\n"%n,
+        return n
+    else:
+        return fibonacci(n-1)+2 *fibonacci(n-2)
 
-for i in range(1,13):
-    result=fibonacci(i)
-    print("%d "%result,end="")
-print("")
+result=fibonacci(6)
+print "%d "%result,
