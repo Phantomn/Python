@@ -1,4 +1,4 @@
-#!/root/scrapy/venv/bin/python
+#!/git/Python/scrapy/venv/bin/python
 
 import sys
 import getopt
