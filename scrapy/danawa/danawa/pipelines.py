@@ -6,13 +6,12 @@
 # See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 import json
 import codecs
-
 class DanawaPipeline(object):
 
 	def __init__(self):
-		self.file = codecs.open("danawa.json", "wb", encoding="utf-8")
+		self.file = codecs.open("danawa.json", "awb", encoding="utf-8")
 
 	def process_item(self, item, spider):
-		line = json.dumps(dict(item), ensure_ascii=False) + "\n"
+		line = json.dumps(dict(item), ensure_ascii=False) + ',' + '\n'
 		self.file.write(line)
 		return item

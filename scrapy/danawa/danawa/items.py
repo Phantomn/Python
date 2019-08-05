@@ -10,4 +10,5 @@ from scrapy.item import Item, Field
 
 
 class DanawaItem(scrapy.Item):
+        date = scrapy.Field()
 	price = scrapy.Field()

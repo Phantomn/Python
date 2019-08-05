@@ -4,8 +4,10 @@ import sys
 from danawa.items import DanawaItem
 from scrapy.selector import HtmlXPathSelector
 from scrapy import Request
+from pytz import timezone
+from datetime import datetime
 
-
+fmt = "%m-%d %H:%M"
 class DanawaSpider(scrapy.Spider):
     name = 'danawa'
     allowed_domains = ['danawa.com']
@@ -18,5 +20,7 @@ class DanawaSpider(scrapy.Spider):
     def parse(self, response):
         item = DanawaItem()
         for sel in response.xpath('//div[@id="lowPriceCash"]'):
-        	item['price'] = sel.xpath('//span[2]/a/em/text()').extract()
-        	yield item
+        	item['price'] = sel.xpath('//span[2]/a/em/text()').extract_first()
+                today = datetime.now(timezone('Asia/Seoul'))
+                item['date'] = today.strftime(fmt)
+                yield item
